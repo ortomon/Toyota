@@ -1,7 +1,7 @@
-package model;
+package org.javaacadmey.toyota.model;
 
-import components.*;
-import type.*;
+import org.javaacadmey.toyota.components.*;
+import org.javaacadmey.toyota.type.*;
 
 public class Hiance extends CargoVan {
     private static final int WHEEL_DIAMETER = 20;

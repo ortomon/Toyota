@@ -1,4 +1,4 @@
-package components;
+package org.javaacadmey.toyota.components;
 
 /**
  * Каждое колесо имеет состояние - проколото или нет, диаметр (camry - 17, solara - 16,
@@ -37,7 +37,7 @@ public class Wheel {
 
     @Override
     public String toString() {
-        return "components.Wheel{" +
+        return "org.javaacadmey.toyota.components.Wheel{" +
                 "isPunctured=" + isPunctured +
                 ", diameter=" + diameter +
                 '}';

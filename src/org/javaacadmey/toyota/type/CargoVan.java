@@ -1,4 +1,4 @@
-package type;
+package org.javaacadmey.toyota.type;
 
 public abstract class CargoVan extends Car {
     private int cargoCapacity;

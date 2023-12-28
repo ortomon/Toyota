@@ -1,12 +1,13 @@
-package components;
+package org.javaacadmey.toyota.components;
 
 /**
- * Электрика имеет атрибут - работоспособна
+ * Двигатель имеет атрибут - работоспособен
  */
-public class ElectricalSystem {
+
+public class Engine {
     private boolean isFine;
 
-    public ElectricalSystem(boolean isFine) {
+    public Engine(boolean isFine) {
         this.isFine = isFine;
     }
 
@@ -20,7 +21,7 @@ public class ElectricalSystem {
 
     @Override
     public String toString() {
-        return "components.ElectricalSystem{" +
+        return "org.javaacadmey.toyota.components.Engine{" +
                 "isFine=" + isFine +
                 '}';
     }

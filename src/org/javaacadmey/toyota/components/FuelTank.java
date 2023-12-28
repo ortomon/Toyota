@@ -1,4 +1,4 @@
-package components;
+package org.javaacadmey.toyota.components;
 
 /**
  * Бензобак имеет атрибут - количество бензина
@@ -28,7 +28,7 @@ public class FuelTank {
     }
     @Override
     public String toString() {
-        return "components.FuelTank{" +
+        return "org.javaacadmey.toyota.components.FuelTank{" +
                 "fuelLevel=" + fuelLevel +
                 '}';
     }

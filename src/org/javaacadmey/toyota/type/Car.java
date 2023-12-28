@@ -1,6 +1,6 @@
-package type;
+package org.javaacadmey.toyota.type;
 
-import components.*;
+import org.javaacadmey.toyota.components.*;
 import java.util.Arrays;
 
 public abstract class Car {
@@ -97,8 +97,8 @@ public abstract class Car {
 
     @Override
     public String toString() {
-        return "type.Car{" +
-                "model='" + model + '\'' +
+        return "org.javaacadmey.toyota.type.Car{" +
+                "org.javaacadmey.toyota.model='" + model + '\'' +
                 ", price=" + price +
                 ", color='" + color + '\'' +
                 ", maxSpeed=" + maxSpeed +

@@ -1,6 +1,4 @@
-package components;
-
-import components.Drink;
+package org.javaacadmey.toyota.components;
 
 public class Fridge {
     public void cool(Drink drink) {

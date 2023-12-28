@@ -1,7 +1,7 @@
-package model;
+package org.javaacadmey.toyota.model;
 
-import components.*;
-import type.*;
+import org.javaacadmey.toyota.components.*;
+import org.javaacadmey.toyota.type.*;
 
 public class Solara extends Cabriolet {
     private static final int WHEEL_DIAMETER = 16;

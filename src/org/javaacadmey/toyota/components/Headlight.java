@@ -1,4 +1,4 @@
-package components;
+package org.javaacadmey.toyota.components;
 
 /**
  * Фары имеют атрибут - работоспособны
@@ -24,7 +24,7 @@ public class Headlight {
 
     @Override
     public String toString() {
-        return "components.Headlight{" +
+        return "org.javaacadmey.toyota.components.Headlight{" +
                 "isFine=" + areOn +
                 '}';
     }

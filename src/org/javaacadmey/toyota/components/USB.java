@@ -1,4 +1,4 @@
-package components;
+package org.javaacadmey.toyota.components;
 
 public class USB {
     private boolean isWork;
