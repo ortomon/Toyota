@@ -1,5 +1,8 @@
 package model;
 
+import components.*;
+import type.*;
+
 public class Camry extends Sedan {
     private static final int WHEEL_DIAMETER = 17;
     private static final String MODEL = "CAMRY";

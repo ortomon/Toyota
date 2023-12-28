@@ -1,8 +1,7 @@
 package model;
 
-import components.Drink;
-import components.Fridge;
-import type.Cabriolet;
+import components.*;
+import type.*;
 
 public class Solara extends Cabriolet {
     private static final int WHEEL_DIAMETER = 16;

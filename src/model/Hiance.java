@@ -1,7 +1,7 @@
 package model;
 
-import components.Wheel;
-import type.CargoVan;
+import components.*;
+import type.*;
 
 public class Hiance extends CargoVan {
     private static final int WHEEL_DIAMETER = 20;

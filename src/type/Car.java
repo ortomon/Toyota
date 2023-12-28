@@ -1,7 +1,6 @@
 package type;
 
 import components.*;
-
 import java.util.Arrays;
 
 /**

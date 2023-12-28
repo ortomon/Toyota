@@ -1,8 +1,7 @@
 package model;
 
-import components.Phone;
-import components.PowerSocket;
-import type.CargoVan;
+import components.*;
+import type.*;
 
 public class Dyna extends CargoVan {
     private static final int WHEEL_DIAMETER = 20;
