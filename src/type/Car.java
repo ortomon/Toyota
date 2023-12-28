@@ -10,7 +10,6 @@ import java.util.Arrays;
  * Цена - с центами
  */
 
-
 public abstract class Car {
     private static final int EMPTY_FUEL_TANK = 0;
 
