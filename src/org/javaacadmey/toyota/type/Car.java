@@ -1,6 +1,8 @@
 package org.javaacadmey.toyota.type;
 
 import org.javaacadmey.toyota.components.*;
+import org.javaacadmey.toyota.exception.StartCarException;
+
 import java.util.Arrays;
 
 public abstract class Car {
@@ -93,6 +95,74 @@ public abstract class Car {
             }
         }
         return true;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public Wheel[] getWheels() {
+        return wheels;
+    }
+
+    public void setWheels(Wheel[] wheels) {
+        this.wheels = wheels;
+    }
+
+    public Transmission getTransmission() {
+        return transmission;
+    }
+
+    public void setTransmission(Transmission transmission) {
+        this.transmission = transmission;
+    }
+
+    public FuelTank getFuelTank() {
+        return fuelTank;
+    }
+
+    public void setFuelTank(FuelTank fuelTank) {
+        this.fuelTank = fuelTank;
+    }
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
+    public ElectricalSystem getElectricalSystem() {
+        return electricalSystem;
+    }
+
+    public void setElectricalSystem(ElectricalSystem electricalSystem) {
+        this.electricalSystem = electricalSystem;
+    }
+
+    public Headlight[] getHeadlights() {
+        return headlights;
+    }
+
+    public void setHeadlights(Headlight[] headlights) {
+        this.headlights = headlights;
     }
 
     @Override

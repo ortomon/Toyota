@@ -1,6 +1,6 @@
 package org.javaacadmey.toyota.type;
 
-public abstract class Cabriolet extends Car {
+public abstract class Cabriolet extends Sedan {
     private boolean isRoofDown;
 
     protected Cabriolet(String model) {

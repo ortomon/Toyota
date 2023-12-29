@@ -9,7 +9,15 @@ public class Factory {
         this.country = country;
     }
 
-    public Wheel createWheel(int diameter) {
+    public Wheel[] createWheels(int diameter) {
+        Wheel[] wheels = new Wheel[4];
+        for (int i = 0; i < wheels.length; i++) {
+            wheels[i] = createWheel(diameter);
+        }
+        return wheels;
+    }
+
+    private Wheel createWheel(int diameter) {
         return new Wheel(false, diameter);
     }
 
@@ -25,7 +33,15 @@ public class Factory {
         return new ElectricalSystem(true);
     }
 
-    public Headlight createHeadlights() {
+    public Headlight[] createHeadlights() {
+        return new Headlight[]{createHeadlight(), createHeadlight()};
+    }
+
+    private Headlight createHeadlight() {
         return new Headlight();
+    }
+
+    public String getCountry() {
+        return country;
     }
 }

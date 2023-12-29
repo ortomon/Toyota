@@ -3,9 +3,12 @@ package org.javaacadmey.toyota.model;
 import org.javaacadmey.toyota.components.*;
 import org.javaacadmey.toyota.type.*;
 
+import static org.javaacadmey.toyota.components.Transmission.AUTO;
+
 public class Solara extends Cabriolet {
-    private static final int WHEEL_DIAMETER = 16;
-    private static final String MODEL = "SOLARA";
+    public static final int WHEEL_DIAMETER = 16;
+    public static final Transmission TRANSMISSION = AUTO;
+    public static final String MODEL = "SOLARA";
     private Fridge fridge;
 
     public Solara() {
