@@ -1,4 +1,4 @@
-package org.javaacadmey.toyota;
+package org.javaacadmey.toyota.production;
 
 import org.javaacadmey.toyota.components.*;
 
@@ -17,7 +17,7 @@ public class Factory {
         return wheels;
     }
 
-    private Wheel createWheel(int diameter) {
+    public Wheel createWheel(int diameter) {
         return new Wheel(false, diameter);
     }
 

@@ -12,14 +12,15 @@ public abstract class Car {
     private Double price;
     private String color;
     private int maxSpeed;
-    private Transmission transmission; // тип коробки передач
-    private boolean isMoving = false; // true - в состоянии движения, false - нет
+    private boolean isMoving = false;
 
+    private Transmission transmission;
     private Wheel[] wheels;
-    private FuelTank fuelTank; // бензобак
-    private Engine engine; // двигатель
-    private ElectricalSystem electricalSystem; // электрика
-    private Headlight[] headlights; //фары
+    private FuelTank fuelTank;
+    private Engine engine;
+    private ElectricalSystem electricalSystem;
+    private Headlight[] headlights;
+    private String country;
 
     protected Car(String model) {
         this.model = model;
@@ -95,6 +96,14 @@ public abstract class Car {
             }
         }
         return true;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public String getModel() {

@@ -8,7 +8,7 @@ import static org.javaacadmey.toyota.components.Transmission.AUTO;
 public class Camry extends Sedan {
     public static final int WHEEL_DIAMETER = 17;
     public static final Transmission TRANSMISSION = AUTO;
-    public static final String MODEL = "CAMRY";
+    public static final String MODEL = "camry";
     private USB usb;
 
     public Camry() {
@@ -17,11 +17,19 @@ public class Camry extends Sedan {
 
     public void connectMusic() {
        usb.connect();
-       System.out.println("org.javaacadmey.toyota.components.USB подключен для проигрывания музыки.");
+       System.out.println("USB подключен для проигрывания музыки.");
     }
 
     public void disconnectMusic() {
         usb.disconnect();
-        System.out.println("org.javaacadmey.toyota.components.USB подключен для проигрывания музыки.");
+        System.out.println("USB отключен");
+    }
+
+    public USB getUsb() {
+        return usb;
+    }
+
+    public void setUsb(USB usb) {
+        this.usb = usb;
     }
 }
