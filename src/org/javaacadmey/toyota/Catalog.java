@@ -6,7 +6,6 @@ public enum Catalog {
     HIANCE(10000, 15000),
     DYNA(12000, 22000);
 
-
     private final double costPrice;
     private final double cost;
 

@@ -5,8 +5,6 @@ import org.javaacadmey.toyota.exception.CountryFactoryNotEqualException;
 import org.javaacadmey.toyota.model.*;
 import org.javaacadmey.toyota.type.*;
 
-import java.net.Socket;
-
 public class AssemblyLine {
     private String country;
     private Factory factory;
@@ -23,36 +21,41 @@ public class AssemblyLine {
         }
     }
 
-    public Camry createCamry(String color, double price) throws CountryFactoryNotEqualException {
+    public Camry createCamry(String color, double price) {
         Camry camry = new Camry();
         createCar(camry, color, price, Camry.WHEEL_DIAMETER);
         camry.setUsb(new USB());
         return camry;
     }
 
-    public Solara createSolara(String color, double price) throws CountryFactoryNotEqualException {
+    public Solara createSolara(String color, double price) {
         Solara solara = new Solara();
         createCar(solara, color, price, Solara.WHEEL_DIAMETER);
         solara.setFridge(new Fridge());
         return solara;
     }
 
-    public Hiance createHiance(String color, double price) throws CountryFactoryNotEqualException {
+    public Hiance createHiance(String color, double price) {
         Hiance hiance = new Hiance();
         createCar(hiance, color, price, Hiance.WHEEL_DIAMETER);
         hiance.setReplacementWheel(factory.createWheel(Hiance.WHEEL_DIAMETER));
         return hiance;
     }
 
-    public Dyna createDyna(String color, double price) throws CountryFactoryNotEqualException {
+    public Dyna createDyna(String color, double price) {
         Dyna dyna = new Dyna();
         createCar(dyna, color, price, Dyna.WHEEL_DIAMETER);
         dyna.setSocket(new PowerSocket());
         return dyna;
     }
 
-    private void createCar(Car car, String color, double price, int wheelDiameter) throws CountryFactoryNotEqualException {
-        checkCountryEquality();
+    private void createCar(Car car, String color, double price, int wheelDiameter) {
+        try {
+            checkCountryEquality();
+        } catch (CountryFactoryNotEqualException e) {
+            System.out.println(e.getMessage());
+        }
+
         car.setColor(color);
         car.setPrice(price);
         car.setCountry(country);

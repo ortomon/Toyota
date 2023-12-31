@@ -8,12 +8,12 @@ public class Warehouse {
     private int totalCountCars;
     private static final int MAX_CAPACITY = 1000;
 
-    private static int camryCount;
+    private int camryCount;
     private int solaraCount;
     private int hianceCount;
     private int dynaCount;
 
-    private static Camry[] camryCars;
+    private Camry[] camryCars;
     private Solara[] solaraCars;
     private Hiance[] hianceCars;
     private Dyna[] dynaCars;
@@ -24,21 +24,30 @@ public class Warehouse {
         this.solaraCount = 0;
         this.hianceCount = 0;
         this.dynaCount = 0;
+
+        this.camryCars = new Camry[MAX_CAPACITY];
+        this.solaraCars = new Solara[MAX_CAPACITY];
+        this.hianceCars = new Hiance[MAX_CAPACITY];
+        this.dynaCars = new Dyna[MAX_CAPACITY];
     }
 
     public Car takeCar(String model) {
         switch (model) {
             case Camry.MODEL:
                 camryCount--;
+                camryCars = Arrays.copyOf(camryCars, camryCars.length - 1);
                 return takeCar(camryCars);
             case Solara.MODEL:
                 solaraCount--;
+                solaraCars = Arrays.copyOf(solaraCars, solaraCars.length - 1);
                 return takeCar(solaraCars);
             case Hiance.MODEL:
                 hianceCount--;
+                hianceCars = Arrays.copyOf(hianceCars, hianceCars.length - 1);
                 return takeCar(hianceCars);
             case Dyna.MODEL:
                 dynaCount--;
+                dynaCars = Arrays.copyOf(dynaCars, dynaCars.length - 1);
                 return takeCar(dynaCars);
             default:
                 System.out.println("Модель не распознана.");
@@ -48,8 +57,7 @@ public class Warehouse {
 
     private Car takeCar(Car[] cars) {
         if (cars.length > 0) {
-            Car car = cars[cars.length - 1];
-            cars = Arrays.copyOf(cars, cars.length - 1);
+            Car car = cars[0];
             totalCountCars--;
             return car;
         } else {
@@ -90,7 +98,7 @@ public class Warehouse {
         return totalCountCars;
     }
 
-    public static int getCamryCount() {
+    public int getCamryCount() {
         return camryCount;
     }
 
@@ -106,19 +114,18 @@ public class Warehouse {
         return dynaCount;
     }
 
-    public static Camry[] getCamryCars() {
-        return camryCars;
-    }
-
-    public Solara[] getSolaraCars() {
-        return solaraCars;
-    }
-
-    public Hiance[] getHianceCars() {
-        return hianceCars;
-    }
-
-    public Dyna[] getDynaCars() {
-        return dynaCars;
+    @Override
+    public String toString() {
+        return "Warehouse{" +
+                "totalCountCars=" + totalCountCars +
+                ", camryCount=" + camryCount +
+                ", solaraCount=" + solaraCount +
+                ", hianceCount=" + hianceCount +
+                ", dynaCount=" + dynaCount +
+                ", camryCars=" + Arrays.toString(camryCars) +
+                ", solaraCars=" + Arrays.toString(solaraCars) +
+                ", hianceCars=" + Arrays.toString(hianceCars) +
+                ", dynaCars=" + Arrays.toString(dynaCars) +
+                '}';
     }
 }

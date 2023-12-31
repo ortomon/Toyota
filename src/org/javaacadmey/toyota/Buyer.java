@@ -4,12 +4,7 @@ public class Buyer {
     private String name;
     private double money;
 
-    public Buyer(String name, double money) {
-        this.name = name;
-        this.money = money;
-    }
-
-    public void setMoney(double money) {
+    public Buyer(double money) {
         this.money = money;
     }
 
@@ -19,5 +14,17 @@ public class Buyer {
 
     public double getMoney() {
         return money;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Buyer{" +
+                " money=" + money +
+                '}';
     }
 }

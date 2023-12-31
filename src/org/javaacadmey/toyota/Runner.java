@@ -1,26 +1,39 @@
 package org.javaacadmey.toyota;
 
-import org.javaacadmey.toyota.exception.CountryFactoryNotEqualException;
-import org.javaacadmey.toyota.exception.StartCarException;
-import org.javaacadmey.toyota.model.*;
 import org.javaacadmey.toyota.production.*;
+import org.javaacadmey.toyota.type.Car;
 
 public class Runner {
-    public static void main(String[] args) throws CountryFactoryNotEqualException {
+    public static void main(String[] args) {
 
         Factory japanFactory = new Factory("Japan");
         AssemblyLine japanAssemblyLine = new AssemblyLine("Japan", japanFactory);
-        Warehouse japanWarehouse = new Warehouse();
-        Dealer dealer = new Dealer();
 
-        Camry camry = japanAssemblyLine.createCamry("black", 10000);
-        Solara solara = japanAssemblyLine.createSolara("white", 12000);
-        Hiance hiance = japanAssemblyLine.createHiance("black", 15000);
-        Dyna dyna = japanAssemblyLine.createDyna("black", 22000);
+        Dealer dealer = new Dealer(
+                japanFactory,
+                japanAssemblyLine,
+                new Warehouse(),
+                new Manager(),
+                new Cashier());
 
-        japanWarehouse.addCar(camry);
-        japanWarehouse.addCar(solara);
-        japanWarehouse.addCar(hiance);
-        japanWarehouse.addCar(dyna);
+        dealer.initialize();
+
+        Buyer[] firstDayBuyers = {
+                new Buyer(10000),
+                new Buyer(12000),
+                new Buyer(15000),
+                new Buyer(22000),
+                new Buyer(11000),
+                new Buyer(13000),
+                new Buyer(8000),
+                new Buyer(30000),
+        };
+
+        for (Buyer buyer : firstDayBuyers) {
+            Car car = dealer.getManager().sellCar(buyer, dealer.getWarehouse(), dealer.getAssemblyLine());
+            dealer.getCashier().totalIncome(car);
+        }
+
+        dealer.getCashier().printTotalIncome();
     }
 }
