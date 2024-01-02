@@ -3,9 +3,10 @@ package org.javaacadmey.toyota;
 import org.javaacadmey.toyota.production.*;
 import org.javaacadmey.toyota.type.Car;
 
-public class Runner {
-    public static void main(String[] args) {
+import java.io.IOException;
 
+public class Runner {
+    public static void main(String[] args) throws IOException {
         Factory japanFactory = new Factory("Japan");
         AssemblyLine japanAssemblyLine = new AssemblyLine("Japan", japanFactory);
 
@@ -13,7 +14,7 @@ public class Runner {
                 japanFactory,
                 japanAssemblyLine,
                 new Warehouse(),
-                new Manager(),
+                new Manager("моргенштерн"),
                 new Cashier());
 
         dealer.initialize();
@@ -30,10 +31,12 @@ public class Runner {
         };
 
         for (Buyer buyer : firstDayBuyers) {
-            Car car = dealer.getManager().sellCar(buyer, dealer.getWarehouse(), dealer.getAssemblyLine());
+            Car car = dealer.getManager().sellCar(buyer, dealer.getWarehouse(), dealer);
             dealer.getCashier().totalIncome(car);
         }
 
-        dealer.getCashier().printTotalIncome();
+        dealer.getCashier().printIncome();
+
+        dealer.getManager().generateReport();
     }
 }

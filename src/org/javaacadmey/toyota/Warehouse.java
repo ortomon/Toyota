@@ -94,8 +94,20 @@ public class Warehouse {
         }
     }
 
-    public int getTotalCountCars() {
-        return totalCountCars;
+    public int getCountCarsOfModel(String model) {
+        switch (model) {
+            case Camry.MODEL:
+                return getCamryCount();
+            case Solara.MODEL:
+                return getSolaraCount();
+            case Hiance.MODEL:
+                return getHianceCount();
+            case Dyna.MODEL:
+                return getDynaCount();
+            default:
+                System.out.println("Модель не распознана.");
+                return 0;
+        }
     }
 
     public int getCamryCount() {

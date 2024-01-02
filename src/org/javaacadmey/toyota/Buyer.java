@@ -8,6 +8,11 @@ public class Buyer {
         this.money = money;
     }
 
+    public Buyer(String name, double money) {
+        this.name = name;
+        this.money = money;
+    }
+
     public String getName() {
         return name;
     }

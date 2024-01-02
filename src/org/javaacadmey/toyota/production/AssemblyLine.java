@@ -5,6 +5,8 @@ import org.javaacadmey.toyota.exception.CountryFactoryNotEqualException;
 import org.javaacadmey.toyota.model.*;
 import org.javaacadmey.toyota.type.*;
 
+import java.util.Arrays;
+
 public class AssemblyLine {
     private String country;
     private Factory factory;
@@ -21,7 +23,7 @@ public class AssemblyLine {
         }
     }
 
-    public Camry createCamry(String color, double price) {
+    private Camry createCamry(String color, double price) {
         Camry camry = new Camry();
         createCar(camry, color, price, Camry.WHEEL_DIAMETER);
         camry.setUsb(new USB());
@@ -47,6 +49,22 @@ public class AssemblyLine {
         createCar(dyna, color, price, Dyna.WHEEL_DIAMETER);
         dyna.setSocket(new PowerSocket());
         return dyna;
+    }
+
+    public Car createCar(String model, String color, double price) {
+        switch (model) {
+            case Camry.MODEL:
+                return createCamry(color, price);
+            case Solara.MODEL:
+                return createSolara(color, price);
+            case Hiance.MODEL:
+                return createHiance(color, price);
+            case Dyna.MODEL:
+                return createDyna(color, price);
+            default:
+                System.out.println("Модель не распознана.");
+                return null;
+        }
     }
 
     private void createCar(Car car, String color, double price, int wheelDiameter) {

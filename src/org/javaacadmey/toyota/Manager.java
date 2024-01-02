@@ -1,50 +1,59 @@
 package org.javaacadmey.toyota;
 
-import org.javaacadmey.toyota.exception.CountryFactoryNotEqualException;
-import org.javaacadmey.toyota.model.*;
-import org.javaacadmey.toyota.production.AssemblyLine;
 import org.javaacadmey.toyota.type.Car;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class Manager {
+    private static final int NO_CARS_IN_WAREHOUSE = 0;
+
     private String name;
-    public Manager() {
-        System.out.println("Менеджер ожидает нового покупателя.");
+    private Report report;
+
+    public Manager(String name) {
+        this.name = name;
+        this.report = new Report(name);
+        System.out.println("Менеджер " + name + " ожидает нового покупателя.");
     }
 
-    public Car sellCar(Buyer buyer, Warehouse warehouse, AssemblyLine assemblyLine) {
+    public void generateReport() throws IOException {
+        String reportFile = "report.txt";
+
+        try (FileWriter fileWriter = new FileWriter(reportFile, true)) {
+            fileWriter.write(report.report());
+        }
+    }
+
+    public Car sellCar(Buyer buyer, Warehouse warehouse, Dealer dealer) {
         double budget = buyer.getMoney();
 
         if (budget >= Catalog.DYNA.getCost()) {
-            if (warehouse.getDynaCount() != 0) {
-                return warehouse.takeCar(Dyna.MODEL);
-            } else {
-                warehouse.addCar(assemblyLine.createDyna("black", Catalog.DYNA.getCost()));
-                return warehouse.takeCar(Dyna.MODEL);
-            }
+            return sellCar(warehouse, Catalog.DYNA, dealer, Color.BLACK);
         } else if (budget >= Catalog.HIANCE.getCost()) {
-            if (warehouse.getHianceCount() != 0) {
-                return warehouse.takeCar(Hiance.MODEL);
-            } else {
-                warehouse.addCar(assemblyLine.createHiance("black", Catalog.HIANCE.getCost()));
-                return warehouse.takeCar(Hiance.MODEL);
-            }
+            return sellCar(warehouse, Catalog.HIANCE, dealer, Color.BLACK);
         } else if (budget >= Catalog.SOLARA.getCost()) {
-            if (warehouse.getSolaraCount() != 0) {
-                return warehouse.takeCar(Solara.MODEL);
-            } else {
-                warehouse.addCar(assemblyLine.createSolara("white", Catalog.SOLARA.getCost()));
-                return warehouse.takeCar(Solara.MODEL);
-            }
+            return sellCar(warehouse, Catalog.SOLARA, dealer, Color.WHITE);
         } else if (budget >= Catalog.CAMRY.getCost()) {
-            if (warehouse.getCamryCount() != 0) {
-                return warehouse.takeCar(Camry.MODEL);
-            } else {
-                warehouse.addCar(assemblyLine.createCamry("black", Catalog.CAMRY.getCost()));
-                return warehouse.takeCar(Camry.MODEL);
-            }
+            return sellCar(warehouse, Catalog.CAMRY, dealer, Color.BLACK);
         } else {
-            System.out.println(buyer.getName() + " Ты бомж");
+            System.out.println("Ты бомж");
             return null;
         }
+    }
+
+    private Car sellCar(Warehouse warehouse, Catalog catalog, Dealer dealer, Color Color) {
+        if (warehouse.getCountCarsOfModel(catalog.getModel()) != NO_CARS_IN_WAREHOUSE) {
+            return sellCar(warehouse, catalog);
+        } else {
+            dealer.requestAssemblyAndProduction(catalog.getModel(), Color, catalog.getCost());
+            return sellCar(warehouse, catalog);
+        }
+    }
+
+    private Car sellCar(Warehouse warehouse, Catalog catalog) {
+        Car soldCar = warehouse.takeCar(catalog.getModel());
+        report.addCar(catalog.getModel(), catalog.getCost(), catalog.getCostPrice());
+        return soldCar;
     }
 }

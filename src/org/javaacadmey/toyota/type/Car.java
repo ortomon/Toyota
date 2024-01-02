@@ -176,17 +176,7 @@ public abstract class Car {
 
     @Override
     public String toString() {
-        return "org.javaacadmey.toyota.type.Car{" +
-                "org.javaacadmey.toyota.model='" + model + '\'' +
-                ", price=" + price +
-                ", color='" + color + '\'' +
-                ", maxSpeed=" + maxSpeed +
-                ", inMotion=" + isMoving +
-                ", wheels=" + Arrays.toString(wheels) +
-                ", fuelTank=" + fuelTank +
-                ", engine=" + engine +
-                ", electricalSystem=" + electricalSystem +
-                ", headlights=" + Arrays.toString(headlights) +
+        return "{model='" + model + '\'' +
                 '}';
     }
 }

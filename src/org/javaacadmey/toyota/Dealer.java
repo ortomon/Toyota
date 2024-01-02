@@ -1,8 +1,12 @@
 package org.javaacadmey.toyota;
 
-import org.javaacadmey.toyota.exception.CountryFactoryNotEqualException;
+import org.javaacadmey.toyota.model.Camry;
+import org.javaacadmey.toyota.model.Dyna;
+import org.javaacadmey.toyota.model.Hiance;
+import org.javaacadmey.toyota.model.Solara;
 import org.javaacadmey.toyota.production.AssemblyLine;
 import org.javaacadmey.toyota.production.Factory;
+import org.javaacadmey.toyota.type.Car;
 
 public class Dealer {
     private Factory factory;
@@ -20,11 +24,14 @@ public class Dealer {
     }
 
     public void initialize() {
-        warehouse.addCar(assemblyLine.createCamry("black", Catalog.CAMRY.getCost()));
-        warehouse.addCar(assemblyLine.createSolara("white", Catalog.SOLARA.getCost()));
-        warehouse.addCar(assemblyLine.createHiance("black", Catalog.HIANCE.getCost()));
-        warehouse.addCar(assemblyLine.createDyna("black", Catalog.DYNA.getCost()));
+        warehouse.addCar(assemblyLine.createCar(Camry.MODEL, Color.BLACK.getColor(), Catalog.CAMRY.getCost()));
+        warehouse.addCar(assemblyLine.createCar(Solara.MODEL, Color.WHITE.getColor(), Catalog.SOLARA.getCost()));
+        warehouse.addCar(assemblyLine.createCar(Hiance.MODEL, Color.BLACK.getColor(), Catalog.HIANCE.getCost()));
+        warehouse.addCar(assemblyLine.createCar(Dyna.MODEL, Color.BLACK.getColor(), Catalog.DYNA.getCost()));
+    }
 
+    public void requestAssemblyAndProduction(String model, Color Color, double cost) {
+        warehouse.addCar(assemblyLine.createCar(model, Color.getColor(), cost));
     }
 
     public Manager getManager() {
