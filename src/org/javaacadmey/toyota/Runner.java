@@ -1,7 +1,11 @@
 package org.javaacadmey.toyota;
 
+import org.javaacadmey.toyota.dealership.Buyer;
+import org.javaacadmey.toyota.dealership.dealer.workers.Cashier;
+import org.javaacadmey.toyota.dealership.dealer.Dealer;
+import org.javaacadmey.toyota.dealership.dealer.workers.manager.Manager;
 import org.javaacadmey.toyota.production.*;
-import org.javaacadmey.toyota.type.Car;
+import org.javaacadmey.toyota.vehicles.types.Car;
 
 import java.io.IOException;
 

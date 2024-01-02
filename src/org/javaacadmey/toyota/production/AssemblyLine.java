@@ -1,11 +1,14 @@
 package org.javaacadmey.toyota.production;
 
-import org.javaacadmey.toyota.components.*;
-import org.javaacadmey.toyota.exception.CountryFactoryNotEqualException;
-import org.javaacadmey.toyota.model.*;
-import org.javaacadmey.toyota.type.*;
-
-import java.util.Arrays;
+import org.javaacadmey.toyota.production.exceptions.CountryFactoryNotEqualException;
+import org.javaacadmey.toyota.vehicles.models.camry.Camry;
+import org.javaacadmey.toyota.vehicles.models.camry.components.USB;
+import org.javaacadmey.toyota.vehicles.models.dyna.Dyna;
+import org.javaacadmey.toyota.vehicles.models.dyna.components.PowerSocket;
+import org.javaacadmey.toyota.vehicles.models.hiance.Hiance;
+import org.javaacadmey.toyota.vehicles.models.solara.components.Fridge;
+import org.javaacadmey.toyota.vehicles.models.solara.Solara;
+import org.javaacadmey.toyota.vehicles.types.*;
 
 public class AssemblyLine {
     private String country;

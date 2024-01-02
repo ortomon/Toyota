@@ -1,6 +1,6 @@
 package org.javaacadmey.toyota.production;
 
-import org.javaacadmey.toyota.components.*;
+import org.javaacadmey.toyota.vehicles.components.*;
 
 public class Factory {
     private String country;
