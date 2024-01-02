@@ -1,8 +1,5 @@
 package org.javaacadmey.toyota.vehicles.components;
 
-/**
- * Фары имеют атрибут - работоспособны
- */
 public class Headlight {
     private boolean areOn;
 

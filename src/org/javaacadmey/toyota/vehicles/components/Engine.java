@@ -1,9 +1,5 @@
 package org.javaacadmey.toyota.vehicles.components;
 
-/**
- * Двигатель имеет атрибут - работоспособен
- */
-
 public class Engine {
     private boolean isFine;
 
@@ -21,7 +17,7 @@ public class Engine {
 
     @Override
     public String toString() {
-        return "org.javaacadmey.toyota.vehicles.components.Engine{" +
+        return "Engine{" +
                 "isFine=" + isFine +
                 '}';
     }

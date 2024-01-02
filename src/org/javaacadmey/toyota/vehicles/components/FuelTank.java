@@ -1,17 +1,15 @@
 package org.javaacadmey.toyota.vehicles.components;
 
-/**
- * Бензобак имеет атрибут - количество бензина
- */
+import org.javaacadmey.toyota.vehicles.exception.NegativeFuelLevelException;
 
 public class FuelTank {
     private int fuelLevel;
 
     public FuelTank(int fuelLevel) {
-        if (checkFuelLevel()) {
+        if (checkFuelLevel(fuelLevel)) {
             this.fuelLevel = fuelLevel;
         } else {
-            System.out.println("ошибка: количество топлива не может быть отрицательным!");
+            throw new NegativeFuelLevelException();
         }
     }
 
@@ -20,12 +18,17 @@ public class FuelTank {
     }
 
     public void setFuelLevel(int fuelLevel) {
-        this.fuelLevel = fuelLevel;
+        if (checkFuelLevel(fuelLevel)) {
+            this.fuelLevel = fuelLevel;
+        } else {
+            throw new NegativeFuelLevelException();
+        }
     }
 
-    private boolean checkFuelLevel() {
+    private boolean checkFuelLevel(int fuelLevel) {
         return fuelLevel >= 0;
     }
+
     @Override
     public String toString() {
         return "org.javaacadmey.toyota.vehicles.components.FuelTank{" +

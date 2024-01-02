@@ -1,12 +1,7 @@
 package org.javaacadmey.toyota.vehicles.components;
 
-/**
- * Каждое колесо имеет состояние - проколото или нет, диаметр (camry - 17, solara - 16,
- *  * hiance - 20, dyna - 20). Колеса могуть быть заменяемы если они одинакового диаметра.
- */
-
 public class Wheel {
-    private boolean isPunctured; // true - проколото, false - нет
+    private boolean isPunctured;
     private final int diameter;
 
     public Wheel(boolean isPunctured, int diameter) {
@@ -37,7 +32,7 @@ public class Wheel {
 
     @Override
     public String toString() {
-        return "org.javaacadmey.toyota.vehicles.components.Wheel{" +
+        return "Wheel{" +
                 "isPunctured=" + isPunctured +
                 ", diameter=" + diameter +
                 '}';

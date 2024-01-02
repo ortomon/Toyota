@@ -1,4 +1,4 @@
-package org.javaacadmey.toyota.vehicles.components;
+package org.javaacadmey.toyota.vehicles.exception;
 
 public class StartCarException extends Exception {
     public StartCarException(String message) {

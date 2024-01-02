@@ -1,7 +1,7 @@
 package org.javaacadmey.toyota.vehicles.types;
 
 import org.javaacadmey.toyota.vehicles.components.*;
-import org.javaacadmey.toyota.vehicles.components.StartCarException;
+import org.javaacadmey.toyota.vehicles.exception.StartCarException;
 
 public abstract class Car {
     private static final int EMPTY_FUEL_TANK = 0;
@@ -10,7 +10,7 @@ public abstract class Car {
     private Double price;
     private String color;
     private int maxSpeed;
-    private boolean isMoving = false;
+    private boolean isMoving;
 
     private Transmission transmission;
     private Wheel[] wheels;
@@ -22,6 +22,7 @@ public abstract class Car {
 
     protected Car(String model) {
         this.model = model;
+        this.isMoving = false;
     }
 
     // Начать движение
@@ -30,7 +31,7 @@ public abstract class Car {
             isMoving = true;
             System.out.println("Машина начала движение.");
         } else {
-            throw new StartCarException(StartFailReason());
+            throw new StartCarException(startFailReason());
         }
     }
 
@@ -49,7 +50,7 @@ public abstract class Car {
     }
 
     //причина невозможности движения
-    private String StartFailReason() {
+    private String startFailReason() {
         StringBuilder reason = new StringBuilder();
 
         if (!checkWheels()) {
@@ -68,7 +69,7 @@ public abstract class Car {
             reason.append("Неисправный двигатель. ");
         }
 
-        return reason.toString();
+        return reason.toString().trim();
     }
 
     private boolean checkComponents() {
@@ -96,10 +97,6 @@ public abstract class Car {
         return true;
     }
 
-    public String getCountry() {
-        return country;
-    }
-
     public void setCountry(String country) {
         this.country = country;
     }
@@ -116,20 +113,48 @@ public abstract class Car {
         this.price = price;
     }
 
-    public String getColor() {
-        return color;
-    }
-
     public void setColor(String color) {
         this.color = color;
     }
 
-    public Wheel[] getWheels() {
-        return wheels;
-    }
-
     public void setWheels(Wheel[] wheels) {
         this.wheels = wheels;
+    }
+
+    public void setFuelTank(FuelTank fuelTank) {
+        this.fuelTank = fuelTank;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
+    public void setElectricalSystem(ElectricalSystem electricalSystem) {
+        this.electricalSystem = electricalSystem;
+    }
+
+    public void setHeadlights(Headlight[] headlights) {
+        this.headlights = headlights;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public void setMaxSpeed(int maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }
+
+    public boolean isMoving() {
+        return isMoving;
+    }
+
+    public void setMoving(boolean moving) {
+        isMoving = moving;
     }
 
     public Transmission getTransmission() {
@@ -140,36 +165,28 @@ public abstract class Car {
         this.transmission = transmission;
     }
 
-    public FuelTank getFuelTank() {
-        return fuelTank;
+    public Wheel[] getWheels() {
+        return wheels;
     }
 
-    public void setFuelTank(FuelTank fuelTank) {
-        this.fuelTank = fuelTank;
+    public FuelTank getFuelTank() {
+        return fuelTank;
     }
 
     public Engine getEngine() {
         return engine;
     }
 
-    public void setEngine(Engine engine) {
-        this.engine = engine;
-    }
-
     public ElectricalSystem getElectricalSystem() {
         return electricalSystem;
-    }
-
-    public void setElectricalSystem(ElectricalSystem electricalSystem) {
-        this.electricalSystem = electricalSystem;
     }
 
     public Headlight[] getHeadlights() {
         return headlights;
     }
 
-    public void setHeadlights(Headlight[] headlights) {
-        this.headlights = headlights;
+    public String getCountry() {
+        return country;
     }
 
     @Override

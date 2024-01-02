@@ -1,8 +1,5 @@
 package org.javaacadmey.toyota.vehicles.components;
 
-/**
- * Электрика имеет атрибут - работоспособна
- */
 public class ElectricalSystem {
     private boolean isFine;
 
@@ -20,7 +17,7 @@ public class ElectricalSystem {
 
     @Override
     public String toString() {
-        return "org.javaacadmey.toyota.vehicles.components.ElectricalSystem{" +
+        return "oElectricalSystem{" +
                 "isFine=" + isFine +
                 '}';
     }
