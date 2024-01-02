@@ -19,7 +19,6 @@ public class Manager {
     public Manager(String name) {
         this.name = name;
         this.report = new Report(name);
-        System.out.println("Менеджер " + name + " ожидает нового покупателя.");
     }
 
     public void generateReport() throws IOException {
@@ -57,7 +56,7 @@ public class Manager {
     }
 
     private Car sellCar(Warehouse warehouse, Catalog catalog) {
-        Car soldCar = warehouse.takeCar(catalog.getModel());
+        Car soldCar = warehouse.extractCar(catalog.getModel());
         report.addCar(catalog.getModel(), catalog.getCost(), catalog.getCostPrice());
         return soldCar;
     }

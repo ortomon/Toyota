@@ -16,4 +16,8 @@ public abstract class Cabriolet extends Sedan {
         isRoofDown = true;
         System.out.println("Крыша кабриолета опущена.");
     }
+
+    public boolean isRoofDown() {
+        return isRoofDown;
+    }
 }

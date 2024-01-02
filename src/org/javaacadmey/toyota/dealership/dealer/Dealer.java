@@ -25,13 +25,14 @@ public class Dealer {
         this.cashier = cashier;
     }
 
-    public void initialize() {
+    public void addCarsToWarehouse() {
         warehouse.addCar(assemblyLine.createCar(Camry.MODEL, Color.BLACK.getColor(), Catalog.CAMRY.getCost()));
         warehouse.addCar(assemblyLine.createCar(Solara.MODEL, Color.WHITE.getColor(), Catalog.SOLARA.getCost()));
         warehouse.addCar(assemblyLine.createCar(Hiance.MODEL, Color.BLACK.getColor(), Catalog.HIANCE.getCost()));
         warehouse.addCar(assemblyLine.createCar(Dyna.MODEL, Color.BLACK.getColor(), Catalog.DYNA.getCost()));
     }
 
+    // Метод для запроса сборки и производства автомобиля с указанными параметрами
     public void requestAssemblyAndProduction(String model, Color Color, double cost) {
         warehouse.addCar(assemblyLine.createCar(model, Color.getColor(), cost));
     }

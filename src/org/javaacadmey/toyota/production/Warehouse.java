@@ -34,31 +34,31 @@ public class Warehouse {
         this.dynaCars = new Dyna[MAX_CAPACITY];
     }
 
-    public Car takeCar(String model) {
+    public Car extractCar(String model) {
         switch (model) {
             case Camry.MODEL:
                 camryCount--;
                 camryCars = Arrays.copyOf(camryCars, camryCars.length - 1);
-                return takeCar(camryCars);
+                return extractCar(camryCars);
             case Solara.MODEL:
                 solaraCount--;
                 solaraCars = Arrays.copyOf(solaraCars, solaraCars.length - 1);
-                return takeCar(solaraCars);
+                return extractCar(solaraCars);
             case Hiance.MODEL:
                 hianceCount--;
                 hianceCars = Arrays.copyOf(hianceCars, hianceCars.length - 1);
-                return takeCar(hianceCars);
+                return extractCar(hianceCars);
             case Dyna.MODEL:
                 dynaCount--;
                 dynaCars = Arrays.copyOf(dynaCars, dynaCars.length - 1);
-                return takeCar(dynaCars);
+                return extractCar(dynaCars);
             default:
                 System.out.println("Модель не распознана.");
                 return null;
         }
     }
 
-    private Car takeCar(Car[] cars) {
+    private Car extractCar(Car[] cars) {
         if (cars.length > 0) {
             Car car = cars[0];
             totalCountCars--;

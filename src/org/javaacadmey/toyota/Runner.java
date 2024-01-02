@@ -21,7 +21,7 @@ public class Runner {
                 new Manager("моргенштерн"),
                 new Cashier());
 
-        dealer.initialize();
+        dealer.addCarsToWarehouse();
 
         Buyer[] firstDayBuyers = {
                 new Buyer(10000),
@@ -40,7 +40,6 @@ public class Runner {
         }
 
         dealer.getCashier().printIncome();
-
         dealer.getManager().generateReport();
     }
 }

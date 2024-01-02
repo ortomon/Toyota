@@ -8,11 +8,6 @@ public class Buyer {
         this.money = money;
     }
 
-    public Buyer(String name, double money) {
-        this.name = name;
-        this.money = money;
-    }
-
     public String getName() {
         return name;
     }
@@ -25,6 +20,9 @@ public class Buyer {
         this.name = name;
     }
 
+    public void setMoney(double money) {
+        this.money = money;
+    }
 
     @Override
     public String toString() {

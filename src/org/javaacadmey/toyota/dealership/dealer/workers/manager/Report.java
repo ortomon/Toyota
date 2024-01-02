@@ -6,7 +6,6 @@ import java.util.Arrays;
 
 public class Report {
     private String managerName;
-//    private String[] report;
     private String[] soldCars;
     private int numberSoldCar;
 
@@ -16,17 +15,17 @@ public class Report {
 
     public Report(String managerName) {
         this.managerName = managerName;
-//        this.report = new String[0];
-        this.soldCars = new String[0]; // Например, начальная емкость 100 машин
+        this.soldCars = new String[0];
         this.numberSoldCar = 0;
-        this.income = Cashier.income;
+        this.income = 0;
         this.profit = 0;
         this.expenses = 0;
     }
 
     public void addCar(String model, double cost, double costPrice) {
+        numberSoldCar++;
         String carInfo = String.format("Модель №%d %s - стоимость продажи: %.2f - себестоимость: %.2f",
-                soldCars.length + 1, model, cost, costPrice);
+                numberSoldCar, model, cost, costPrice);
 
         String[] newSoldCars = new String[soldCars.length + 1];
         System.arraycopy(soldCars, 0, newSoldCars, 0, soldCars.length);
@@ -71,15 +70,5 @@ public class Report {
         report.append("--------------------------------------------------------------------------\n");
 
         return report.toString();
-    }
-    @Override
-    public String toString() {
-        return managerName + "\n\n" +
-                Arrays.toString(soldCars) + "\n" +
-                "--------------------------------------------------------------" + "\n" +
-                "доходы - " + income + "\n" +
-                "расходы - " + expenses + "\n" +
-                "прибыль - " + profit + "\n" +
-                "--------------------------------------------------------------";
     }
 }
