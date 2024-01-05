@@ -25,7 +25,6 @@ public abstract class Car {
         this.isMoving = false;
     }
 
-    // Начать движение
     public void start() throws StartCarException {
         if (checkComponents()) {
             isMoving = true;
@@ -35,13 +34,11 @@ public abstract class Car {
         }
     }
 
-    // Остановить движение
     public void stop() {
         isMoving = false;
         System.out.println("Машина остановилась.");
     }
 
-    // Включить фары
     public void turnHeadlights() {
         for (Headlight headlight : headlights) {
             headlight.turnOn();
@@ -49,7 +46,6 @@ public abstract class Car {
         System.out.println("фары включены");
     }
 
-    //причина невозможности движения
     private String startFailReason() {
         StringBuilder reason = new StringBuilder();
 

@@ -32,7 +32,6 @@ public class Dealer {
         warehouse.addCar(assemblyLine.createCar(Dyna.MODEL, Color.BLACK.getColor(), Catalog.DYNA.getCost()));
     }
 
-    // Метод для запроса сборки и производства автомобиля с указанными параметрами
     public void requestAssemblyAndProduction(String model, Color Color, double cost) {
         warehouse.addCar(assemblyLine.createCar(model, Color.getColor(), cost));
     }

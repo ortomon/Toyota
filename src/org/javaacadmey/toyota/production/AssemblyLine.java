@@ -21,8 +21,7 @@ public class AssemblyLine {
 
     private void checkCountryEquality() throws CountryFactoryNotEqualException {
         if (!factory.getCountry().equals(country)) {
-            throw new CountryFactoryNotEqualException("Страны фабрики производства и конвейера не совпадают: "
-                    + factory.getCountry() + " и " + country);
+            throw new CountryFactoryNotEqualException(factory.getCountry() + " и " + country);
         }
     }
 

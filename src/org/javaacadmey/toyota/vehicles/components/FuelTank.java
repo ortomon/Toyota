@@ -6,11 +6,7 @@ public class FuelTank {
     private int fuelLevel;
 
     public FuelTank(int fuelLevel) {
-        if (checkFuelLevel(fuelLevel)) {
-            this.fuelLevel = fuelLevel;
-        } else {
-            throw new NegativeFuelLevelException();
-        }
+        checkFuelLevel(fuelLevel);
     }
 
     public int getFuelLevel() {
@@ -18,15 +14,15 @@ public class FuelTank {
     }
 
     public void setFuelLevel(int fuelLevel) {
-        if (checkFuelLevel(fuelLevel)) {
+        checkFuelLevel(fuelLevel);
+    }
+
+    private void checkFuelLevel(int fuelLevel) {
+        if (fuelLevel >= 0) {
             this.fuelLevel = fuelLevel;
         } else {
             throw new NegativeFuelLevelException();
         }
-    }
-
-    private boolean checkFuelLevel(int fuelLevel) {
-        return fuelLevel >= 0;
     }
 
     @Override
