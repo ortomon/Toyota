@@ -1,4 +1,4 @@
-package org.javaacadmey.toyota.dealership;
+package org.javaacadmey.toyota.dealership.buyer;
 
 public class Buyer {
     private String name;

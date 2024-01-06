@@ -2,7 +2,7 @@ package org.javaacadmey.toyota.dealership.dealer.workers.manager;
 
 import org.javaacadmey.toyota.dealership.dealer.Catalog;
 import org.javaacadmey.toyota.dealership.dealer.Color;
-import org.javaacadmey.toyota.dealership.Buyer;
+import org.javaacadmey.toyota.dealership.buyer.Buyer;
 import org.javaacadmey.toyota.dealership.dealer.Dealer;
 import org.javaacadmey.toyota.production.Warehouse;
 import org.javaacadmey.toyota.vehicles.types.Car;

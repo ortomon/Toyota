@@ -1,7 +1,7 @@
 package org.javaacadmey.toyota.vehicles.models;
 
 import org.javaacadmey.toyota.vehicles.components.*;
-import org.javaacadmey.toyota.vehicles.components.Drink;
+import org.javaacadmey.toyota.dealership.buyer.stuff.Drink;
 import org.javaacadmey.toyota.vehicles.components.Fridge;
 import org.javaacadmey.toyota.vehicles.types.*;
 

@@ -1,6 +1,6 @@
 package org.javaacadmey.toyota;
 
-import org.javaacadmey.toyota.dealership.Buyer;
+import org.javaacadmey.toyota.dealership.buyer.Buyer;
 import org.javaacadmey.toyota.dealership.dealer.workers.Cashier;
 import org.javaacadmey.toyota.dealership.dealer.Dealer;
 import org.javaacadmey.toyota.dealership.dealer.workers.manager.Manager;

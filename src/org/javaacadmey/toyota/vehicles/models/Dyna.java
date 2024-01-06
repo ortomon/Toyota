@@ -1,7 +1,7 @@
 package org.javaacadmey.toyota.vehicles.models;
 
 import org.javaacadmey.toyota.vehicles.components.*;
-import org.javaacadmey.toyota.vehicles.components.Phone;
+import org.javaacadmey.toyota.dealership.buyer.stuff.Phone;
 import org.javaacadmey.toyota.vehicles.components.PowerSocket;
 import org.javaacadmey.toyota.vehicles.types.*;
 

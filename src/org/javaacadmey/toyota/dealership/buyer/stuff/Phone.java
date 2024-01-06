@@ -1,4 +1,4 @@
-package org.javaacadmey.toyota.vehicles.components;
+package org.javaacadmey.toyota.dealership.buyer.stuff;
 
 public class Phone {
     private boolean isCharged;
