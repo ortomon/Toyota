@@ -21,44 +21,6 @@ public class AssemblyLine {
         this.factory = factory;
     }
 
-    private void checkCountryEquality() throws CountryFactoryNotEqualException {
-        if (!factory.getCountry().equals(country)) {
-            throw new CountryFactoryNotEqualException(factory.getCountry() + " и " + country);
-        }
-    }
-
-    private Camry createCamry(String color, double price) {
-        Camry camry = new Camry();
-        createCar(camry, color, price, Camry.WHEEL_DIAMETER, Camry.TRANSMISSION, Camry.MAX_SPEED);
-        createSedan(camry);
-        camry.setUsb(new USB());
-        return camry;
-    }
-
-    public Solara createSolara(String color, double price) {
-        Solara solara = new Solara();
-        createCar(solara, color, price, Solara.WHEEL_DIAMETER, Solara.TRANSMISSION, Solara.MAX_SPEED);
-        createSedan(solara);
-        solara.setFridge(new Fridge());
-        return solara;
-    }
-
-    public Hiance createHiance(String color, double price) {
-        Hiance hiance = new Hiance();
-        createCar(hiance, color, price, Hiance.WHEEL_DIAMETER, Hiance.TRANSMISSION, Hiance.MAX_SPEED);
-        createCargoVan(hiance, Hiance.CARGO_CAPACITY);
-        hiance.setReplacementWheel(factory.createWheel(Hiance.WHEEL_DIAMETER));
-        return hiance;
-    }
-
-    public Dyna createDyna(String color, double price) {
-        Dyna dyna = new Dyna();
-        createCar(dyna, color, price, Dyna.WHEEL_DIAMETER, Dyna.TRANSMISSION, Dyna.MAX_SPEED);
-        createCargoVan(dyna, Dyna.CARGO_CAPACITY);
-        dyna.setSocket(new PowerSocket());
-        return dyna;
-    }
-
     public Car createCar(String model, String color, double price) {
         switch (model) {
             case Camry.MODEL:
@@ -73,6 +35,44 @@ public class AssemblyLine {
                 System.out.println("Модель не распознана.");
                 return null;
         }
+    }
+
+    private void checkCountryEquality() throws CountryFactoryNotEqualException {
+        if (!factory.getCountry().equals(country)) {
+            throw new CountryFactoryNotEqualException(factory.getCountry() + " и " + country);
+        }
+    }
+
+    private Camry createCamry(String color, double price) {
+        Camry camry = new Camry();
+        createCar(camry, color, price, Camry.WHEEL_DIAMETER, Camry.TRANSMISSION, Camry.MAX_SPEED);
+        createSedan(camry);
+        camry.setUsb(new USB());
+        return camry;
+    }
+
+    private Solara createSolara(String color, double price) {
+        Solara solara = new Solara();
+        createCar(solara, color, price, Solara.WHEEL_DIAMETER, Solara.TRANSMISSION, Solara.MAX_SPEED);
+        createSedan(solara);
+        solara.setFridge(new Fridge());
+        return solara;
+    }
+
+    private Hiance createHiance(String color, double price) {
+        Hiance hiance = new Hiance();
+        createCar(hiance, color, price, Hiance.WHEEL_DIAMETER, Hiance.TRANSMISSION, Hiance.MAX_SPEED);
+        createCargoVan(hiance, Hiance.CARGO_CAPACITY);
+        hiance.setReplacementWheel(factory.createWheel(Hiance.WHEEL_DIAMETER));
+        return hiance;
+    }
+
+    private Dyna createDyna(String color, double price) {
+        Dyna dyna = new Dyna();
+        createCar(dyna, color, price, Dyna.WHEEL_DIAMETER, Dyna.TRANSMISSION, Dyna.MAX_SPEED);
+        createCargoVan(dyna, Dyna.CARGO_CAPACITY);
+        dyna.setSocket(new PowerSocket());
+        return dyna;
     }
 
     private void createSedan(Sedan sedan) {
