@@ -1,4 +1,4 @@
-package org.javaacadmey.toyota.vehicles.models.camry.components;
+package org.javaacadmey.toyota.vehicles.components;
 
 public class USB {
     private boolean isWork;

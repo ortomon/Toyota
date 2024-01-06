@@ -41,7 +41,7 @@ public class Manager {
         } else if (budget >= Catalog.CAMRY.getCost()) {
             return sellCar(warehouse, Catalog.CAMRY, dealer, Color.BLACK);
         } else {
-            System.out.println("Ты бомж");
+            System.out.println("Менеджер: Ты бомж! Охрана!");
             return null;
         }
     }

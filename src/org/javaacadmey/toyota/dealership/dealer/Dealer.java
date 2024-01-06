@@ -3,10 +3,10 @@ package org.javaacadmey.toyota.dealership.dealer;
 import org.javaacadmey.toyota.dealership.dealer.workers.Cashier;
 import org.javaacadmey.toyota.dealership.dealer.workers.manager.Manager;
 import org.javaacadmey.toyota.production.Warehouse;
-import org.javaacadmey.toyota.vehicles.models.camry.Camry;
-import org.javaacadmey.toyota.vehicles.models.dyna.Dyna;
-import org.javaacadmey.toyota.vehicles.models.hiance.Hiance;
-import org.javaacadmey.toyota.vehicles.models.solara.Solara;
+import org.javaacadmey.toyota.vehicles.models.Camry;
+import org.javaacadmey.toyota.vehicles.models.Dyna;
+import org.javaacadmey.toyota.vehicles.models.Hiance;
+import org.javaacadmey.toyota.vehicles.models.Solara;
 import org.javaacadmey.toyota.production.AssemblyLine;
 import org.javaacadmey.toyota.production.Factory;
 

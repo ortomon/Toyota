@@ -1,4 +1,4 @@
-package org.javaacadmey.toyota.vehicles.models.dyna.components;
+package org.javaacadmey.toyota.vehicles.components;
 
 public class Phone {
     private boolean isCharged;

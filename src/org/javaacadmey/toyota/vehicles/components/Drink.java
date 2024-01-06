@@ -1,4 +1,4 @@
-package org.javaacadmey.toyota.vehicles.models.solara.components;
+package org.javaacadmey.toyota.vehicles.components;
 
 public class Drink {
     private String name;

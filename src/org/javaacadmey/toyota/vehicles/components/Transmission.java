@@ -5,7 +5,7 @@ public enum Transmission {
     MANUAL("механика"),
     ROBOT("робот");
 
-    private String type;
+    private final String type;
 
     Transmission(String type) {
         this.type = type;

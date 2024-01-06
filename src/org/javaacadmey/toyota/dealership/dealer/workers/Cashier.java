@@ -13,6 +13,6 @@ public class Cashier {
     }
 
     public void printIncome() {
-        System.out.println("Общий доход кассы: " + income);
+        System.out.println("Кассир: Общий доход кассы: " + income);
     }
 }

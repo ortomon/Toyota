@@ -1,4 +1,4 @@
-package org.javaacadmey.toyota.vehicles.models.dyna.components;
+package org.javaacadmey.toyota.vehicles.components;
 
 public class PowerSocket {
     public void chargePhone(Phone phone) {

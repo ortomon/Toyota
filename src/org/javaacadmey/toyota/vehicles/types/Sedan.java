@@ -1,23 +1,19 @@
 package org.javaacadmey.toyota.vehicles.types;
 
+import org.javaacadmey.toyota.vehicles.components.CruiseControl;
+
 public abstract class Sedan extends Car {
-    private boolean cruiseControlWork;
+    private CruiseControl cruiseControl;
 
     protected Sedan(String model) {
         super(model);
     }
 
-    public boolean isCruiseControlWork() {
-        return cruiseControlWork;
+    public CruiseControl getCruiseControl() {
+        return cruiseControl;
     }
 
-    public void cruiseControlTurnOn() {
-        cruiseControlWork = true;
-        System.out.println("Круиз-контроль включен.");
-    }
-
-    public void cruiseControlTurnOff() {
-        cruiseControlWork = false;
-        System.out.println("Круиз-контроль выключен.");
+    public void setCruiseControl(CruiseControl cruiseControl) {
+        this.cruiseControl = cruiseControl;
     }
 }
