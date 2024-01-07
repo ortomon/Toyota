@@ -1,6 +1,6 @@
 package org.javaacadmey.toyota.vehicles.components;
 
-import org.javaacadmey.toyota.vehicles.exception.NegativeFuelLevelException;
+import org.javaacadmey.toyota.vehicles.exceptions.NegativeFuelLevelException;
 
 public class FuelTank {
     private int fuelLevel;

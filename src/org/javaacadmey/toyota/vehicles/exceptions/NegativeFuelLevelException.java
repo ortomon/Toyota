@@ -1,4 +1,4 @@
-package org.javaacadmey.toyota.vehicles.exception;
+package org.javaacadmey.toyota.vehicles.exceptions;
 
 public class NegativeFuelLevelException extends RuntimeException {
     public NegativeFuelLevelException() {

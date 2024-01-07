@@ -1,7 +1,7 @@
 package org.javaacadmey.toyota.vehicles.types;
 
 import org.javaacadmey.toyota.vehicles.components.*;
-import org.javaacadmey.toyota.vehicles.exception.StartCarException;
+import org.javaacadmey.toyota.vehicles.exceptions.StartCarException;
 
 public abstract class Car {
     private static final int EMPTY_FUEL_TANK = 0;
