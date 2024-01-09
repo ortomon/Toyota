@@ -10,7 +10,7 @@ public abstract class Car {
     private Double price;
     private String color;
     private int maxSpeed;
-    private boolean isMoving;
+    private boolean isMoving = false;
 
     private Transmission transmission;
     private Wheel[] wheels;
@@ -22,7 +22,6 @@ public abstract class Car {
 
     protected Car(String model) {
         this.model = model;
-        this.isMoving = false;
     }
 
     public void start() throws StartCarException {

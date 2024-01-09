@@ -8,31 +8,18 @@ import org.javaacadmey.toyota.vehicles.types.*;
 import java.util.Arrays;
 
 public class Warehouse {
-    private int totalCountCars;
     private static final int MAX_CAPACITY = 1000;
+    private int totalCountCars = 0;
 
-    private int camryCount;
-    private int solaraCount;
-    private int hianceCount;
-    private int dynaCount;
+    private int camryCount = 0;
+    private int solaraCount = 0;
+    private int hianceCount = 0;
+    private int dynaCount = 0;
 
-    private Camry[] camryCars;
-    private Solara[] solaraCars;
-    private Hiance[] hianceCars;
-    private Dyna[] dynaCars;
-
-    public Warehouse() {
-        this.totalCountCars = 0;
-        this.camryCount = 0;
-        this.solaraCount = 0;
-        this.hianceCount = 0;
-        this.dynaCount = 0;
-
-        this.camryCars = new Camry[MAX_CAPACITY];
-        this.solaraCars = new Solara[MAX_CAPACITY];
-        this.hianceCars = new Hiance[MAX_CAPACITY];
-        this.dynaCars = new Dyna[MAX_CAPACITY];
-    }
+    private Camry[] camryCars = new Camry[MAX_CAPACITY];
+    private Solara[] solaraCars = new Solara[MAX_CAPACITY];
+    private Hiance[] hianceCars = new Hiance[MAX_CAPACITY];
+    private Dyna[] dynaCars = new Dyna[MAX_CAPACITY];
 
     public Car extractCar(String model) {
         switch (model) {

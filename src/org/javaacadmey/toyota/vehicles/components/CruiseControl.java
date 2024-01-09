@@ -1,11 +1,7 @@
 package org.javaacadmey.toyota.vehicles.components;
 
 public class CruiseControl {
-    private boolean isWork;
-
-    public CruiseControl() {
-        this.isWork = false;
-    }
+    private boolean isWork = false;
 
     public void cruiseControlTurnOn() {
         isWork = true;

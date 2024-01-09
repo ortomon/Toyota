@@ -1,11 +1,7 @@
 package org.javaacadmey.toyota.vehicles.components;
 
 public class Headlight {
-    private boolean areOn;
-
-    public Headlight() {
-        this.areOn = false;
-    }
+    private boolean areOn = false;
 
     public boolean isAreOn() {
         return areOn;

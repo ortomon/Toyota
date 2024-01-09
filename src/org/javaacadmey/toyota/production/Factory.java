@@ -11,6 +11,7 @@ public class Factory {
 
     public Wheel[] createWheels(int diameter) {
         Wheel[] wheels = new Wheel[4];
+
         for (int i = 0; i < wheels.length; i++) {
             wheels[i] = createWheel(diameter);
         }

@@ -12,7 +12,6 @@ import java.io.IOException;
 
 public class Manager {
     private static final int NO_CARS_IN_WAREHOUSE = 0;
-
     private String name;
     private Report report;
 

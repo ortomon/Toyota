@@ -6,20 +6,15 @@ import java.util.Arrays;
 
 public class Report {
     private String managerName;
-    private String[] soldCars;
-    private int numberSoldCar;
+    private String[] soldCars = new String[0];
+    private int numberSoldCar = 0;
 
-    private double income; // доходы - (сумма всех продаж),
-    private double expenses; // расходы (сумма всех себестоимостей),
-    private double profit; // прибыль - (доходы - расходы)
+    private double income = 0;
+    private double expenses = 0;
+    private double profit = 0;
 
     public Report(String managerName) {
         this.managerName = managerName;
-        this.soldCars = new String[0];
-        this.numberSoldCar = 0;
-        this.income = 0;
-        this.profit = 0;
-        this.expenses = 0;
     }
 
     public void addCar(String model, double cost, double costPrice) {
