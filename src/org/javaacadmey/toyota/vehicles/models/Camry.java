@@ -11,7 +11,6 @@ public class Camry extends Sedan {
     public static final int MAX_SPEED = 300;
     public static final Transmission TRANSMISSION = AUTO;
     public static final String MODEL = "camry";
-
     private USB usb;
 
     public Camry() {

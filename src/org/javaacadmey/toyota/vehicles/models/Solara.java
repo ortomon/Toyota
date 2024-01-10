@@ -12,7 +12,6 @@ public class Solara extends Cabriolet {
     public static final int MAX_SPEED = 200;
     public static final Transmission TRANSMISSION = AUTO;
     public static final String MODEL = "solara";
-
     private Fridge fridge;
 
     public Solara() {

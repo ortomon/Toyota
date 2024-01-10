@@ -11,7 +11,6 @@ public class Hiance extends CargoVan {
     public static final int MAX_SPEED = 100;
     public static final Transmission TRANSMISSION = MANUAL;
     public static final String MODEL = "hiance";
-
     private Wheel replacementWheel;
 
     public Hiance() {

@@ -10,7 +10,7 @@ public abstract class Car {
     private Double price;
     private String color;
     private int maxSpeed;
-    private boolean isMoving = false;
+    private boolean isMoving;
 
     private Transmission transmission;
     private Wheel[] wheels;

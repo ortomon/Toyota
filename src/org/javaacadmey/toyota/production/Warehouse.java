@@ -9,12 +9,12 @@ import java.util.Arrays;
 
 public class Warehouse {
     private static final int MAX_CAPACITY = 1000;
-    private int totalCountCars = 0;
+    private int totalCountCars;
 
-    private int camryCount = 0;
-    private int solaraCount = 0;
-    private int hianceCount = 0;
-    private int dynaCount = 0;
+    private int camryCount;
+    private int solaraCount;
+    private int hianceCount;
+    private int dynaCount;
 
     private Camry[] camryCars = new Camry[MAX_CAPACITY];
     private Solara[] solaraCars = new Solara[MAX_CAPACITY];

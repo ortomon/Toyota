@@ -6,12 +6,12 @@ import java.util.Arrays;
 
 public class Report {
     private String managerName;
-    private String[] soldCars = new String[0];
-    private int numberSoldCar = 0;
+    private String[] soldCars;
+    private int numberSoldCar;
 
-    private double income = 0;
-    private double expenses = 0;
-    private double profit = 0;
+    private double income;
+    private double expenses;
+    private double profit;
 
     public Report(String managerName) {
         this.managerName = managerName;
@@ -51,7 +51,7 @@ public class Report {
 
     public String report() {
         StringBuilder report = new StringBuilder();
-        report.append(String.format("\nИмя менеджера: %s\n\n", managerName));
+        report.append(String.format("Имя менеджера: %s\n\n", managerName));
 
         for (String soldCar : soldCars) {
             report.append(soldCar).append("\n");

@@ -13,7 +13,6 @@ public class Dyna extends CargoVan {
     public static final int MAX_SPEED = 400;
     public static final Transmission TRANSMISSION = ROBOT;
     public static final String MODEL = "dyna";
-
     private PowerSocket socket;
 
     public Dyna() {
