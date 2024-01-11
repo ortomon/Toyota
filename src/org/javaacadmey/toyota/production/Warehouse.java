@@ -1,10 +1,14 @@
 package org.javaacadmey.toyota.production;
 
+import org.javaacadmey.toyota.dealership.dealer.Catalog;
+import org.javaacadmey.toyota.dealership.dealer.Color;
 import org.javaacadmey.toyota.vehicles.models.Camry;
 import org.javaacadmey.toyota.vehicles.models.Dyna;
 import org.javaacadmey.toyota.vehicles.models.Hiance;
 import org.javaacadmey.toyota.vehicles.models.Solara;
 import org.javaacadmey.toyota.vehicles.types.*;
+
+import java.io.IOException;
 import java.util.Arrays;
 
 public class Warehouse {
@@ -24,36 +28,46 @@ public class Warehouse {
     public Car extractCar(String model) {
         switch (model) {
             case Camry.MODEL:
-                camryCount--;
-                camryCars = Arrays.copyOf(camryCars, camryCars.length - 1);
-                return extractCar(camryCars);
+                if (checkCountCarModel(camryCount)) {
+                    camryCount--;
+                    return extractCar(camryCars);
+                }
             case Solara.MODEL:
-                solaraCount--;
-                solaraCars = Arrays.copyOf(solaraCars, solaraCars.length - 1);
-                return extractCar(solaraCars);
+                if (checkCountCarModel(solaraCount)) {
+                    solaraCount--;
+                    return extractCar(solaraCars);
+                }
             case Hiance.MODEL:
-                hianceCount--;
-                hianceCars = Arrays.copyOf(hianceCars, hianceCars.length - 1);
-                return extractCar(hianceCars);
+                if (checkCountCarModel(hianceCount)) {
+                    hianceCount--;
+                    return extractCar(hianceCars);
+                }
             case Dyna.MODEL:
-                dynaCount--;
-                dynaCars = Arrays.copyOf(dynaCars, dynaCars.length - 1);
-                return extractCar(dynaCars);
+                if (checkCountCarModel(dynaCount)) {
+                    dynaCount--;
+                    return extractCar(dynaCars);
+                }
             default:
                 System.out.println("Модель не распознана.");
                 return null;
         }
     }
 
+    private boolean checkCountCarModel(int carsCount) {
+        return (carsCount > 0);
+    }
+
     private Car extractCar(Car[] cars) {
-        if (cars.length > 0) {
-            Car car = cars[0];
-            totalCountCars--;
-            return car;
-        } else {
-            System.out.println("Нет доступных машин указанной модели на складе.");
-            return null;
+        for (int i = 0; i < cars.length; i++) {
+            if (cars[i] != null) {
+                Car car = cars[i];
+                cars[i] = null;
+                totalCountCars--;
+                return car;
+            }
         }
+        System.out.println("Нет доступных машин указанной модели на складе.");
+        return null;
     }
 
     public void addCar(Car car) {
