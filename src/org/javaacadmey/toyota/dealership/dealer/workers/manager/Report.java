@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class Report {
     private String managerName;
-    private String[] soldCars;
+    private String[] soldCars = new String[0];
     private int numberSoldCar;
 
     private double income;
